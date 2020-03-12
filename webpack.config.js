@@ -74,7 +74,7 @@ module.exports = (env = {}) => {
         },
         // Loading CSS
         {
-          test: /\.(css)$/i,
+          test: /\.css$/i,
           exclude: /\.module\.css$/i,
           use: getStyleLoaders()
         },
