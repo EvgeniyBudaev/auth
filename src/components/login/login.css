@@ -1,0 +1,21 @@
+.Login {
+  background: rgba(44, 62, 80, 0.7);
+  padding: 40px;
+  width: 310px;
+  margin: auto;
+  margin-top: 80px;
+  height: 400px;
+}
+form {
+  text-align: center;
+  height: 100%;
+}
+.Login__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.Login__inputs {
+  margin-bottom: 40px;
+}
