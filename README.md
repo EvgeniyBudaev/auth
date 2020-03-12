@@ -23,6 +23,14 @@ cmd - создаем в папке файл package.json :
 react :
 ### `npm install react react-dom`
 
+redux :
+### `npm install redux react-redux`
+### `npm install redux-thunk`
+### `npm install axios`
+
+cookie :
+### `npm i react-cookie`
+
 запуск babel для преобразования :
 
 ### `npx babel src --out-dir build`

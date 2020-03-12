@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import classes from "./login.module.css";
 import Input from "../ui/input";
+import { URL } from "../routes/urls";
+import { connect } from "react-redux";
+import { auth } from "../../actions/auth";
 
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -147,4 +150,10 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+  return {
+    auth: (email, password, isLogin) => dispatch(auth(email, password, isLogin))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Login);
