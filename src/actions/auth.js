@@ -1,37 +1,19 @@
-import axios from "axios";
-import { AUTH_SUCCESS, AUTH_LOGOUT } from "../actions/actionTypes";
+import { AUTH_SUCCESS } from "../actions/actionTypes";
 
-export function auth(email, password, isLogin) {
-  return async dispatch => {
-    const authData = {
-      email,
-      password,
-      returnSecureToken: true
-    };
+export function auth() {
+  return dispatch => {
 
-    let url = "https://testart.ru/auth";
+    const token =
+      "8c02d93ade241ed33ef2ad476752de1a917a3f7141448662c54ec606dec23bc4a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B56674%2C%22r1JhFhdjwIlvSvHr3P9OxzXsCV2T9gOO%22%2C2592000%5D%22%3B%7D";
 
-    if (isLogin) {
-      url = "https://testart.ru/auth";
-    }
+    localStorage.setItem("token", token);
 
-    const response = await axios.post(url, authData);
-    const data = response.data;
-
-    const expirationDate = new Date(
-      new Date().getTime() + data.expiresIn * 1000
-    );
-
-    localStorage.setItem("token", data.idToken);
-    localStorage.setItem("userId", data.localId);
-    localStorage.setItem("expirationDate", expirationDate);
-
-    dispatch(authSuccess(data.idToken));
-    dispatch(autoLogout(data.expiresIn));
+    dispatch(authSuccess(token));
   };
 }
 
 export function authSuccess(token) {
+  console.log(token)
   return {
     type: AUTH_SUCCESS,
     token

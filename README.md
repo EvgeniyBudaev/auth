@@ -22,6 +22,7 @@ cmd - создаем в папке файл package.json :
 
 react :
 ### `npm install react react-dom`
+### `npm install react-router-dom`
 
 redux :
 ### `npm install redux react-redux`

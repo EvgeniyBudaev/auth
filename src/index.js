@@ -5,11 +5,14 @@ import App from "./components/app";
 import { CookiesProvider } from 'react-cookie';
 import store from './components/store/store';
 import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <CookiesProvider>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </CookiesProvider>,
   document.getElementById("root")

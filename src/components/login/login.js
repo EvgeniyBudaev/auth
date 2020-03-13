@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import classes from "./login.module.css";
 import Input from "../ui/input";
 import { URL } from "../routes/urls";
@@ -134,14 +135,14 @@ class Login extends Component {
             </div>
 
             <div className={classes.login__btn}>
-              <a href="#" className={classes.link}>
+              <Link to={URL.YES} className={classes.link}>
                 <input
                   type="success"
                   value="Войти"
                   onClick={this.loginHandler}
                   disabled={!this.state.isFormValid}
                 ></input>
-              </a>
+              </Link>
             </div>
           </div>
         </form>
@@ -152,7 +153,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    auth: (email, password, isLogin) => dispatch(auth(email, password, isLogin))
+    auth: () => dispatch(auth())
   };
 };
 
