@@ -34,13 +34,13 @@ class Login extends Component {
         type: "password",
         label: "Пароль",
         name: "password",
-        placeholder: "Пароль не менее 6 символов",
+        placeholder: "Пароль не менее 3 символов",
         errorMessage: "Неверный пароль!",
         valid: false,
         touched: false,
         validation: {
           required: true,
-          minLength: 6
+          minLength: 3
         }
       }
     }
@@ -135,7 +135,7 @@ class Login extends Component {
             </div>
 
             <div className={classes.login__btn}>
-              <Link to={URL.YES} className={classes.link}>
+              <Link to={URL.HOME} className={classes.link}>
                 <input
                   type="success"
                   value="Войти"

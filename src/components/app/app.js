@@ -11,25 +11,19 @@ class App extends Component {
 
     let routes = (
       <Switch>
-        <Route path={URL.HOME} exact>
+        <Route path={URL.LOGIN} exact>
           <Login />
         </Route>
 
-        <Redirect to={URL.HOME} />
+        <Redirect to={URL.LOGIN} />
       </Switch>
     );
 
     if (this.props.isAuth) {
       routes = (
         <Switch>
-          <Route path={URL.YES} exact>
-            <YesPage />
-          </Route>
-          <Route path={URL.HOME} exact>
-            <Login {...this.props} loginUser={this.props.auth} />
-          </Route>
-
-          <Redirect to={URL.YES} />
+          <Route path="/" exact />
+          <Redirect to={URL.HOME} exact />
         </Switch>
       );
     }
@@ -44,6 +38,5 @@ const mapStateToProps = state => {
     isAuth: !!state.auth.token
   };
 };
-
 
 export default withRouter(connect(mapStateToProps)(App));

@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env = {}) => {
-  const { mode = "development" } = env;
+  const { mode = "production" } = env;
 
   const isProd = mode === "production";
   const isDev = mode === "development";
@@ -82,7 +82,7 @@ module.exports = (env = {}) => {
         {
           test: /\.module\.css$/i,
           use: [
-            "style-loader",
+            MiniCssExtractPlugin.loader,
             {
               loader: "css-loader",
               options: {
