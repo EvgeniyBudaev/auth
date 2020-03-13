@@ -2,7 +2,8 @@ import { AUTH_SUCCESS } from "../actions/actionTypes";
 
 const initialState = {
   token: null,
-  isAuth: false
+  isAuth: false,
+  cookie: null
 };
 
 export default function authReducer(state = initialState, action) {
@@ -11,7 +12,8 @@ export default function authReducer(state = initialState, action) {
       return {
         ...state,
         token: action.token,
-        isAuth: true
+        isAuth: true,
+        cookie: action.cookie
       };
 
     default:
