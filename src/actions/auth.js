@@ -9,14 +9,14 @@ export function auth() {
 
     if (token) {
       dispatch(authSuccess(token));
-      localStorage.setItem("token", token);
+      localStorage.setItem("_identity", token);
       cookie.save("_identity", token, { path: "/" });
     }
   };
 }
 
 export function authSuccess(token) {
-  // console.log(token);
+  console.log("Токен: " + token);
   console.log("Куки: " + cookie);
   return {
     type: AUTH_SUCCESS,
