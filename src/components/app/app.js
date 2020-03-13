@@ -4,7 +4,6 @@ import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import { URL } from "../routes/urls";
 import Login from "../login";
 import YesPage from "../pages/yes-page";
-import auth from "../../actions/auth";
 
 class App extends Component {
   render() {
@@ -41,15 +40,10 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    isAuth: state.auth.isAuth,
-    token: state.auth.token
+    // isAuth: state.auth.isAuth
+    isAuth: !!state.auth.token
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    auth: () => dispatch(auth())
-  };
-};
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps)(App));
