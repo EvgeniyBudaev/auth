@@ -5,7 +5,7 @@ import { URL } from "../routes/urls";
 import Login from "../login";
 import YesPage from "../pages/yes-page";
 import { withCookies } from "react-cookie";
-import TestartURL from "./foo";
+import TestartURL from "./testart-url";
 
 class App extends Component {
   render() {
