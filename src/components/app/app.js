@@ -25,8 +25,8 @@ class App extends Component {
       routes = (
         <Switch>
           {/* <Route path={URL.HOME} exact /> */}
-          {/* <Redirect to={URL.HOME} exact /> */}
-          <Route path="*" component={TestartURL} />
+          <Redirect to={URL.HOME} exact />
+          {/* <Route path="*" component={TestartURL} /> */}
         </Switch>
       );
     }
