@@ -39,7 +39,7 @@ redux :
 cookie :
 
 ### `npm i react-cookie`
-
+### `npm install js-cookie`
 ### `npm i react-cookies`
 
 запуск babel для преобразования :
